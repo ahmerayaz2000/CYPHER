@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CYPHER — Gamified Security Awareness Training & SOC2 Compliance. Turn employees into your strongest human firewall with playable interactive lessons.">
+  <meta name="keywords" content="security awareness training, cyber awareness, phishing simulator, password security, social engineering, safe browsing, SOC2 compliance">
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="CYPHER — Gamified Security Awareness Platform">
+  <meta property="og:description" content="Gamified, interactive cybersecurity lessons that employees actually love. Meet compliance and secure your team effortlessly.">
+  <meta property="og:image" content="./assets/hero.png">
+  <meta property="og:type" content="website">
+  <title>CYPHER — Gamified Security Awareness Academy & Compliance</title>
+  
+  <!-- Premium Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+  <!-- Animated Cyber Glow Grid Background -->
+  <div class="cyber-grid-bg"></div>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom Cyber Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Header / Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="#" class="logo-link" id="home-logo">
+        <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+        <span class="logo-text">CYPHER</span>
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#sandbox-section" class="nav-link">Play Sandbox</a></li>
+          <li><a href="#pricing" class="nav-link">Academy Plans</a></li>
+          <li><a href="#portfolio" class="nav-link">Impact Metrics</a></li>
+          <li><a href="#contact" class="nav-link">Free Audit</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <!-- E-commerce Mini Cart Trigger -->
+        <button class="cart-trigger" id="cart-btn" aria-label="Open Cart">
+          <i class="fa-solid fa-shield-cat"></i>
+          <span class="cart-count">0</span>
+        </button>
+        <!-- Single Focused Main Action -->
+        <a href="#sandbox-section" class="btn-cta btn-header">Try Sandbox</a>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="page-content">
+
+    <!-- HERO SECTION (Above the Fold) -->
+    <section id="hero" class="hero-section active-page">
+      <div class="section-container hero-grid">
+        <div class="hero-text-content">
+          <div class="badge-premium">
+            <i class="fa-solid fa-shield-virus"></i> Gamified Security Academy
+          </div>
+          <!-- Clear Headline (What we do in one sentence) -->
+          <h1 class="hero-title">We turn employees into your strongest human firewall.</h1>
+          <!-- Subheadline (Who it's for & the result) -->
+          <p class="hero-subtitle">For fast-scaling startups and modern remote teams who need to prevent phishing breaches, secure sensitive data, and meet SOC2 compliance effortlessly.</p>
+          
+          <!-- One Bold CTA above the fold -->
+          <div class="hero-actions-container">
+            <a href="#sandbox-section" class="btn-cta-bold pulse-glow-btn">Start Sandbox Lesson <i class="fa-solid fa-gamepad"></i></a>
+          </div>
+          
+          <!-- Key trust signals above the fold -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-num" data-val="0.1">0.1%</span>
+              <span class="metric-lbl">Avg. phishing click rate</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-num">SOC2</span>
+              <span class="metric-lbl">Auditor-ready compliance</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-num">15m</span>
+              <span class="metric-lbl">Avg. Monthly Training time</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-visual-content">
+          <div class="glass-frame">
+            <img src="./assets/hero.png" alt="Futuristic interactive cyber security console dashboard" class="hero-img">
+            <div class="glass-tag tag-top">
+              <i class="fa-solid fa-lock text-green"></i>
+              <span>Anti-Phishing Shield</span>
+            </div>
+            <div class="glass-tag tag-bottom">
+              <i class="fa-solid fa-circle-check text-cyan"></i>
+              <span>ISO27001 Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Brand Trust Logo Slider -->
+      <div class="brand-carousel">
+        <div class="carousel-title">TRUSTED BY MODERN TEAMS SECURING COMPLIANCE</div>
+        <div class="brand-track">
+          <div class="brand-logo"><i class="fa-solid fa-cloud"></i> VERCEL</div>
+          <div class="brand-logo"><i class="fa-solid fa-database"></i> SUPABASE</div>
+          <div class="brand-logo"><i class="fa-solid fa-compass"></i> LINEAR</div>
+          <div class="brand-logo"><i class="fa-brands fa-stripe"></i> STRIPE</div>
+          <div class="brand-logo"><i class="fa-solid fa-layer-group"></i> RETOOL</div>
+          <div class="brand-logo"><i class="fa-solid fa-key"></i> CLERK</div>
+          <div class="brand-logo"><i class="fa-solid fa-cloud"></i> VERCEL</div>
+          <div class="brand-logo"><i class="fa-solid fa-database"></i> SUPABASE</div>
+          <div class="brand-logo"><i class="fa-solid fa-compass"></i> LINEAR</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE PLAYABLE SANDBOX LESSONS -->
+    <section id="sandbox-section" class="sandbox-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-badge">Live Interactive Simulator</span>
+          <h2 class="section-title">Train Your Instincts. Zero Boredom.</h2>
+          <p class="section-desc">Try a mock training sandbox below. Complete the challenges, secure the high score, and instantly generate your Cyber Shield Certificate.</p>
+        </div>
+
+        <!-- Simulator Console Box -->
+        <div class="sandbox-console-glass">
+          <!-- Sandbox Tabs Selector -->
+          <div class="sandbox-tabs">
+            <button class="sandbox-tab-btn active" data-tab="phishing-tab"><i class="fa-solid fa-envelope-open-text"></i> Phishing Lab</button>
+            <button class="sandbox-tab-btn" data-tab="password-tab"><i class="fa-solid fa-key"></i> Password Architect</button>
+            <button class="sandbox-tab-btn" data-tab="browsing-tab"><i class="fa-solid fa-globe"></i> Safe URL Quiz</button>
+            <button class="sandbox-tab-btn" data-tab="cert-tab" id="cert-tab-btn" disabled><i class="fa-solid fa-medal"></i> Claim Shield Certificate</button>
+          </div>
+
+          <!-- Tab Content 1: Phishing Lab -->
+          <div class="sandbox-tab-content active" id="phishing-tab">
+            <div class="tab-instruction">
+              <span class="step-num">LESSON 01</span>
+              <h4>Phishing Email Inspection</h4>
+              <p>Phishers impersonate trustworthy brands to steal credentials. **Click the highlighted hot-spots** in the email below to analyze clues, then decide if it is phishing or safe.</p>
+            </div>
+
+            <div class="phishing-sandbox-grid">
+              <!-- Mock Webmail client -->
+              <div class="mail-client-glass">
+                <div class="mail-client-header">
+                  <div class="window-dot red"></div>
+                  <div class="window-dot yellow"></div>
+                  <div class="window-dot green"></div>
+                  <span class="mail-subject-title">Inbox — Stripe Support Alerts</span>
+                </div>
+                
+                <div class="mail-meta-details">
+                  <div class="meta-row">
+                    <span class="meta-lbl">From:</span>
+                    <!-- Hotspot 1 -->
+                    <span class="meta-val hotspot-element" data-hotspot="sender" id="hs-sender">
+                      Stripe Security <strong class="hotspot-highlight">&lt;stripe-support@alert-resolve.co&gt;</strong>
+                    </span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="meta-lbl">Subject:</span>
+                    <span class="meta-val font-semibold text-warning">[URGENT] Verify your Stripe bank payout account</span>
+                  </div>
+                </div>
+
+                <div class="mail-body-content">
+                  <p>Dear Stripe Merchant,</p>
+                  <p>We detected irregular payout parameters on your account. To prevent a scheduled payout suspension, you must immediately confirm your primary corporate banking credentials.</p>
+                  
+                  <!-- Hotspot 2 -->
+                  <div class="mail-cta-container">
+                    <span class="mail-mock-btn hotspot-element" data-hotspot="url" id="hs-url">Confirm Payout Bank Account</span>
+                  </div>
+                  
+                  <!-- Hotspot 3 -->
+                  <p class="mail-signature hotspot-element" data-hotspot="greeting" id="hs-greeting">
+                    Thank you,<br>
+                    <strong>Stripe Automated Global Support Team</strong>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Clues Inspector Panel -->
+              <div class="clues-inspector-glass">
+                <div class="inspector-header">
+                  <h5><i class="fa-solid fa-magnifying-glass text-green"></i> Cyber Clue Inspector</h5>
+                  <p>Click on any yellow highlighted part in the email to analyze it.</p>
+                </div>
+                
+                <!-- Dynamic Clue Response Box -->
+                <div class="inspector-response" id="inspector-output">
+                  <div class="empty-clue-state">
+                    <i class="fa-solid fa-mouse-pointer pulse-glow"></i>
+                    <p>Select a highlighted area inside the email box to check for red flags.</p>
+                  </div>
+                </div>
+
+                <!-- Phishing Action buttons -->
+                <div class="inspector-actions" style="display: none;" id="phish-actions-container">
+                  <h5>Your Security Assessment:</h5>
+                  <div class="assessment-btns">
+                    <button class="btn-assess phish" id="assess-phish-btn">Mark as Phishing! <i class="fa-solid fa-bug"></i></button>
+                    <button class="btn-assess safe" id="assess-safe-btn">It's 100% Safe <i class="fa-solid fa-circle-check"></i></button>
+                  </div>
+                  <div id="phish-feedback" class="feedback-toast"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 2: Password Architect -->
+          <div class="sandbox-tab-content" id="password-tab">
+            <div class="tab-instruction">
+              <span class="step-num">LESSON 02</span>
+              <h4>Password Strength Architect</h4>
+              <p>Crackers use powerful supercomputers to brute-force weak credentials. **Type a password below** to check its visual strength, cracking timeline, and architectural score.</p>
+            </div>
+
+            <div class="password-sandbox-grid">
+              <!-- Password Inputter Card -->
+              <div class="pass-creator-card">
+                <div class="form-group">
+                  <label for="pass-test-input">Test a Password</label>
+                  <div class="password-input-wrapper">
+                    <input type="text" id="pass-test-input" placeholder="Type a password (e.g., CyberAegis2026!)" maxlength="32">
+                    <button id="pass-toggle-visibility" aria-label="Toggle Password Visibility"><i class="fa-solid fa-eye-slash"></i></button>
+                  </div>
+                </div>
+
+                <!-- Animated Strength Meter -->
+                <div class="strength-meter-container">
+                  <div class="strength-meter-label">
+                    <span>SECURITY RATING:</span>
+                    <span id="strength-rating-text" class="status-weak">EMPTY</span>
+                  </div>
+                  <div class="strength-bar-track">
+                    <div class="strength-bar-fill" id="strength-bar-fill"></div>
+                  </div>
+                </div>
+
+                <!-- Clocks / Brute Force timing counter -->
+                <div class="crack-time-display">
+                  <div class="clock-icon-glow"><i class="fa-solid fa-clock"></i></div>
+                  <div class="crack-time-text">
+                    <h5>Time to Brute-Force Hack:</h5>
+                    <span id="crack-time-val" class="time-instant">INSTANTLY</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recommendation Checklist -->
+              <div class="pass-rules-card">
+                <h5><i class="fa-solid fa-clipboard-list text-green"></i> Password Strength Checklist</h5>
+                <ul class="rules-list">
+                  <li id="rule-length"><span class="rule-icon"><i class="fa-solid fa-circle-xmark text-danger"></i></span> At least 12 characters</li>
+                  <li id="rule-upper"><span class="rule-icon"><i class="fa-solid fa-circle-xmark text-danger"></i></span> Contains uppercase letters</li>
+                  <li id="rule-lower"><span class="rule-icon"><i class="fa-solid fa-circle-xmark text-danger"></i></span> Contains lowercase letters</li>
+                  <li id="rule-num"><span class="rule-icon"><i class="fa-solid fa-circle-xmark text-danger"></i></span> Contains numbers</li>
+                  <li id="rule-special"><span class="rule-icon"><i class="fa-solid fa-circle-xmark text-danger"></i></span> Contains symbols (!@#$%)</li>
+                </ul>
+
+                <button class="btn-tab-continue" id="pass-continue-btn" disabled>Lock In & Proceed <i class="fa-solid fa-circle-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 3: Safe Browsing Challenge -->
+          <div class="sandbox-tab-content" id="browsing-tab">
+            <div class="tab-instruction">
+              <span class="step-num">LESSON 03</span>
+              <h4>Safe URL Identification Quiz</h4>
+              <p>Social engineers construct fake domain paths that look identical to authentic websites. **Click on the ONLY URL below that is 100% SECURE to access**.</p>
+            </div>
+
+            <div class="url-quiz-container">
+              <div class="url-quiz-question">
+                <h5>Identify the real, secure login portal URL for <strong>PayPal</strong>:</h5>
+              </div>
+
+              <div class="url-options-grid">
+                <!-- Option A -->
+                <button class="url-option-btn" data-option="A">
+                  <span class="url-letter">A</span>
+                  <span class="url-address text-warning">http://paypal.secure-login-3.com/signin</span>
+                </button>
+
+                <!-- Option B -->
+                <button class="url-option-btn" data-option="B">
+                  <span class="url-letter">B</span>
+                  <span class="url-address text-danger">https://paypal-signin.com/login</span>
+                </button>
+
+                <!-- Option C -->
+                <button class="url-option-btn" data-option="C">
+                  <span class="url-letter">C</span>
+                  <span class="url-address text-success">https://www.paypal.com/signin</span>
+                </button>
+              </div>
+
+              <div class="url-quiz-feedback" id="url-feedback-box" style="display: none;">
+                <!-- Filled dynamically by JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 4: Claim Shield Certificate -->
+          <div class="sandbox-tab-content" id="cert-tab">
+            <div class="tab-instruction text-center">
+              <span class="step-num text-success"><i class="fa-solid fa-circle-check"></i> LESSONS COMPLETE</span>
+              <h4>Claim Your Cyber Shield Certificate</h4>
+              <p>Congratulations! You secured a perfect score in the CYPHER Sandbox Training. Type your name below to instantly compile and claim your customized shareable certificate.</p>
+            </div>
+
+            <div class="cert-generator-panel">
+              <div class="cert-input-wrapper">
+                <input type="text" id="cert-name-input" placeholder="Enter Your Name (e.g., Sarah Jenkins)" maxlength="24">
+                <button class="btn-cta-bold pulse-glow-btn" id="generate-cert-btn">Mint Certificate <i class="fa-solid fa-file-signature"></i></button>
+              </div>
+              
+              <!-- Hidden Canvas element to draw the certificate dynamically -->
+              <canvas id="certificate-canvas" style="display: none;"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLAT-RATE E-COMMERCE PLANS SECTION -->
+    <section id="pricing" class="pricing-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-badge">Seat-Based Flat Rate Pricing</span>
+          <h2 class="section-title">E-Commerce Security. No Surprise Bills.</h2>
+          <p class="section-desc">Select a security awareness seat package below, customize active drills, and secure your human firewall instantly. Cancel or adjust seats in one click.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Card 1: Sentinel Starter -->
+          <article class="pricing-card" data-package="starter">
+            <div class="card-header">
+              <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <h3 class="package-name">Sentinel Starter</h3>
+              <p class="package-for">For early-stage startups</p>
+              <div class="package-price">$199<span class="price-period">/ mo</span></div>
+            </div>
+            
+            <div class="card-body">
+              <ul class="package-features">
+                <li><i class="fa-solid fa-circle-check text-green"></i> Up to <strong>15 training seats</strong></li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> All core interactive modules</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Interactive Phishing Labs</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Automated Certificate Minter</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> SOC2 & ISO27001 audit exports</li>
+                <li><i class="fa-solid fa-shield-halved text-cyan"></i> Human Firewall rating: <strong>Standard</strong></li>
+              </ul>
+            </div>
+            
+            <div class="card-footer">
+              <button class="btn-card-buy add-to-cart-btn" data-package-id="starter" data-package-name="Sentinel Starter" data-package-price="199">
+                Buy & Customize Plan
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Apex Guardian (Highlighted) -->
+          <article class="pricing-card highlighted" data-package="guardian">
+            <div class="featured-tag">BEST PROTECTION</div>
+            <div class="card-header">
+              <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3 class="package-name">Apex Guardian</h3>
+              <p class="package-for">For high-growth startups</p>
+              <div class="package-price">$499<span class="price-period">/ mo</span></div>
+            </div>
+            
+            <div class="card-body">
+              <ul class="package-features">
+                <li><i class="fa-solid fa-circle-check text-green"></i> Up to <strong>50 training seats</strong></li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> All core + advanced modules</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> **Mock Phishing Simulator Campaign**</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Slack & Microsoft Teams integrations</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Compliance monitoring dashboard</li>
+                <li><i class="fa-solid fa-shield-halved text-cyan"></i> Human Firewall rating: <strong>High Guard</strong></li>
+              </ul>
+            </div>
+            
+            <div class="card-footer">
+              <button class="btn-card-buy highlighted add-to-cart-btn" data-package-id="guardian" data-package-name="Apex Guardian" data-package-price="499">
+                Buy & Customize Plan
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Enterprise Shield -->
+          <article class="pricing-card" data-package="enterprise">
+            <div class="card-header">
+              <div class="card-icon"><i class="fa-solid fa-vault"></i></div>
+              <h3 class="package-name">Enterprise Shield</h3>
+              <p class="package-for">For scaling enterprise teams</p>
+              <div class="package-price">$999<span class="price-period">/ mo</span></div>
+            </div>
+            
+            <div class="card-body">
+              <ul class="package-features">
+                <li><i class="fa-solid fa-circle-check text-green"></i> <strong>Unlimited training seats</strong></li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Full custom course curricula builder</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Custom simulated Phishing emails</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Dedicated Compliance Advisor</li>
+                <li><i class="fa-solid fa-circle-check text-green"></i> Single Sign-On (SAML/SSO) integrations</li>
+                <li><i class="fa-solid fa-shield-halved text-cyan"></i> Human Firewall rating: <strong>Bulletproof</strong></li>
+              </ul>
+            </div>
+            
+            <div class="card-footer">
+              <button class="btn-card-buy add-to-cart-btn" data-package-id="enterprise" data-package-name="Enterprise Shield" data-package-price="999">
+                Buy & Customize Plan
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / IMPACT CASE STUDIES -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-badge">Impact Metrics</span>
+          <h2 class="section-title">Measurable Compliance Audits.</h2>
+          <p class="section-desc">We deliver more than training scores; we secure audit compliance and drop breach vulnerabilities to zero.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- Case Study 1 -->
+          <article class="portfolio-card">
+            <div class="portfolio-img-wrapper">
+              <img src="./assets/case-study.png" alt="SOC2 Compliance Audit dashboard metric graphics" class="portfolio-img">
+              <div class="portfolio-hover-overlay">
+                <span class="btn-portfolio-view">View Compliance Report <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-meta">
+                <span class="portfolio-cat">SOC2 COMPLIANCE</span>
+                <span class="portfolio-metric"><i class="fa-solid fa-shield-halved"></i> 100% Audit Readiness</span>
+              </div>
+              <h3 class="portfolio-title">AeroPay — Securing human compliance audits for Series A validation.</h3>
+              <p class="portfolio-text">AeroPay needed quick SOC2 Type II validation to seal enterprise deals. Within 15 days of launching CYPHER's Apex Guardian plan, 100% of employees locked in their security certifications, clearing the audit with zero exemptions.</p>
+            </div>
+          </article>
+
+          <!-- Case Study 2 -->
+          <article class="portfolio-card">
+            <div class="portfolio-img-wrapper">
+              <img src="./assets/hero.png" alt="CYPHER Automated Phishing Campaign Metrics" class="portfolio-img desaturate">
+              <div class="portfolio-hover-overlay">
+                <span class="btn-portfolio-view">View Phishing Drill Report <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <div class="portfolio-meta">
+                <span class="portfolio-cat">MOCK PHISHING DRILLS</span>
+                <span class="portfolio-metric"><i class="fa-solid fa-chart-line"></i> -98.7% Phish Click Rate</span>
+              </div>
+              <h3 class="portfolio-title">Nexus SaaS Dashboard — Dropping employee phishing vulnerabilities to near zero.</h3>
+              <p class="portfolio-text">Nexus suffered from high vulnerability in social engineering. CYPHER deployed automated simulated spear-phishing campaigns. Within 30 days, employee click rates fell from 34.8% to a negligible 0.1%.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Sleek Trust Badges & Awards -->
+        <div class="awards-bar">
+          <div class="award-item">
+            <div class="award-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="award-text">
+              <h4>SOC2 Compliant Auditor</h4>
+              <p>Official Training Registry</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <div class="award-text">
+              <h4>CISO Certified</h4>
+              <p>Top Cyber Security Standards</p>
+            </div>
+          </div>
+          <div class="award-item">
+            <div class="award-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="award-text">
+              <h4>Clutch 5.0 Rating</h4>
+              <p>Best Security Awareness SaaS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY & CREDIBILITY SECTION -->
+    <section id="about" class="about-section">
+      <div class="section-container about-grid">
+        <div class="about-visual">
+          <div class="profile-card-glass">
+            <div class="profile-avatar-placeholder">MV</div>
+            <div class="profile-details">
+              <h4>Marcus Vance</h4>
+              <p>Head of Cyber Security & Co-Founder</p>
+              <div class="profile-stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-text">
+          <span class="section-badge">Our Mission</span>
+          <h2 class="section-title">Built by CISOs, loved by teams.</h2>
+          <p class="about-p">Traditional security awareness training is boring, consists of unskippable 2-hour videos, and is immediately forgotten. We built CYPHER to change that. By designing gamified, interactive, rapid sandbox micro-lessons, we make training engaging and hyper-effective.</p>
+          <p class="about-p">We help modern teams secure their business, protect valuable developer environments, and clear complex regulatory compliance criteria in under 15 minutes a month.</p>
+          
+          <div class="about-bullet-points">
+            <div class="bullet-item">
+              <div class="bullet-check"><i class="fa-solid fa-user-ninja"></i></div>
+              <div>
+                <h5>Gamified Micro-Learning</h5>
+                <p>Fast-paced, playable drills that mimic real-life breaches. Zero boring compliance slides.</p>
+              </div>
+            </div>
+            <div class="bullet-item">
+              <div class="bullet-check"><i class="fa-solid fa-shield-cat"></i></div>
+              <div>
+                <h5>SOC2 / ISO27001 Auditor Ready</h5>
+                <p>Export official training completion reports to security compliance registries instantly in one click.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS SLIDER SECTION -->
+      <div class="testimonials-container">
+        <div class="section-header text-center">
+          <span class="section-badge">Client Testimonials</span>
+          <h2 class="section-title">Why Founders Trust CYPHER</h2>
+        </div>
+        
+        <div class="testimonials-slider-wrapper">
+          <div class="testimonials-slider" id="testimonial-slider">
+            
+            <div class="testimonial-slide active">
+              <div class="testimonial-quote">"CYPHER completely solved our compliance headaches. We purchased their Apex Guardian plan, and within 48 hours our entire remote developer team cleared their training sandboxes. The SOC2 auditor loved the reports. It saved us thousands in consultant fees."</div>
+              <div class="testimonial-user">
+                <div class="user-thumb-placeholder">SJ</div>
+                <div class="user-meta">
+                  <h4 class="user-name">Sarah Jenkins</h4>
+                  <p class="user-title">CEO & Founder, AeroPay</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-slide">
+              <div class="testimonial-quote">"Before CYPHER, our phishing failure rate was 30%+. Other corporate training was incredibly boring. CYPHER's interactive phishing sandboxes completely changed employee instincts. Within one month of drills, our click rate fell to a negligible 0.1%."</div>
+              <div class="testimonial-user">
+                <div class="user-thumb-placeholder">MB</div>
+                <div class="user-meta">
+                  <h4 class="user-name">Marcus Brooks</h4>
+                  <p class="user-title">CISO, Nexus SaaS</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <!-- Testimonials Nav Controls -->
+          <div class="slider-controls">
+            <button class="slider-btn prev-btn" id="prev-testimonial" aria-label="Previous Testimonial"><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="slider-dots" id="slider-dots">
+              <span class="dot active" data-index="0"></span>
+              <span class="dot" data-index="1"></span>
+            </div>
+            <button class="slider-btn next-btn" id="next-testimonial" aria-label="Next Testimonial"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-badge">FAQ</span>
+          <h2 class="section-title">Resolving Your Hesitations</h2>
+          <p class="section-desc">Got questions about how gamified security training or SOC2 compliance mapping works? We've got clear answers.</p>
+        </div>
+
+        <div class="faq-accordion-container">
+          
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Are your certificates valid for SOC2 and ISO27001 audits?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-panel">
+              <p>Yes. CYPHER's interactive training courses fully meet the Security Awareness Training criteria required for SOC2, ISO27001, HIPAA, and PCI-DSS compliance audits. Our client dashboard generates auditor-ready completion registers instantly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How does the Simulated Phishing Campaign work?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-panel">
+              <p>With our **Apex Guardian** and **Enterprise Shield** packages, our platform automatically registers and delivers safe, simulated phishing emails to your team members' inboxes. The dashboard maps who successfully reports them and who clicks, triggering micro-training lessons for those who need safety reviews.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>How long does it take for employees to complete training?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-panel">
+              <p>Very fast. Each CYPHER training module is designed as an interactive 3-to-5 minute playable game lesson. Employees can log in asynchronously, complete their training, and return to work without disrupting their schedule.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-trigger">
+              <span>Can we buy seats and change quantities later?</span>
+              <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
+            </button>
+            <div class="faq-panel">
+              <p>Absolutely! The e-commerce cart allows you to buy starting subscription seats. You can scale seats up or down from your administrator console at any time, instantly recalculating your monthly billing tier.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE SECURITY AUDIT CALENDAR BOOKING -->
+    <section id="contact" class="contact-section">
+      <div class="section-container" id="booking-section">
+        <div class="section-header text-center">
+          <span class="section-badge">Claim Free Security Audit</span>
+          <h2 class="section-title">Book a Mock Phishing Audit for Your Team</h2>
+          <p class="section-desc">Want to find out where your team's human vulnerabilities lie? Book a 15-minute consultation to organize a free, secure simulated mock phishing drill.</p>
+        </div>
+
+        <div class="contact-booking-grid">
+          <!-- Calendar Card -->
+          <div class="booking-card-glass">
+            <div class="booking-card-header">
+              <h3><i class="fa-solid fa-calendar-days text-green"></i> Book Simulated Drill Consultation</h3>
+              <p>Select a date and time slot to book a 15-minute Google Meet session with a security engineer.</p>
+            </div>
+            
+            <div class="calendar-widget">
+              <!-- Calendar Header -->
+              <div class="calendar-header">
+                <button class="calendar-nav-btn" id="prev-month" aria-label="Previous Month"><i class="fa-solid fa-chevron-left"></i></button>
+                <h4 id="calendar-month-year">June 2026</h4>
+                <button class="calendar-nav-btn" id="next-month" aria-label="Next Month"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <!-- Week Days -->
+              <div class="calendar-weekdays">
+                <span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span>
+              </div>
+              <!-- Calendar Days Grid -->
+              <div class="calendar-days-grid" id="calendar-days">
+                <!-- Loaded dynamically by JS -->
+              </div>
+              
+              <!-- Time Slots Grid -->
+              <div class="time-slots-container">
+                <h5>Available Slots (GMT+5)</h5>
+                <div class="time-slots-grid" id="time-slots">
+                  <button class="time-slot-btn" data-time="09:00 AM">09:00 AM</button>
+                  <button class="time-slot-btn" data-time="11:00 AM">11:00 AM</button>
+                  <button class="time-slot-btn" data-time="02:00 PM">02:00 PM</button>
+                  <button class="time-slot-btn" data-time="04:00 PM">04:00 PM</button>
+                </div>
+              </div>
+
+              <button class="btn-confirm-booking" id="confirm-booking-btn" disabled>Confirm Booking Slot</button>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-form-glass">
+            <div class="booking-card-header">
+              <h3><i class="fa-solid fa-paper-plane text-cyan"></i> Initiate Direct Inquiry</h3>
+              <p>Need custom licensing or custom phishing drills? Message our CISO advisors directly.</p>
+            </div>
+            
+            <form id="contact-form" class="simple-form">
+              <!-- 3 simple fields -->
+              <div class="form-group">
+                <label for="client-name">Your Name</label>
+                <input type="text" id="client-name" name="name" placeholder="e.g., Jane CISO" required>
+              </div>
+              <div class="form-group">
+                <label for="client-email">Business Email</label>
+                <input type="email" id="client-email" name="email" placeholder="e.g., security@yourco.com" required>
+              </div>
+              <div class="form-group">
+                <label for="client-message">Tell us about your team size & requirements</label>
+                <textarea id="client-message" name="message" rows="4" placeholder="Briefly describe your team size, SOC2 compliance deadlines, or custom curricula goals..." required></textarea>
+              </div>
+              
+              <button type="submit" class="btn-form-submit" id="form-submit-btn">Consult Cyber Advisor <i class="fa-solid fa-shield-virus"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- E-COMMERCE SHOPPING CART SIDEBAR (B2B Seat checkout drawer) -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <h3><i class="fa-solid fa-cart-shopping"></i> Custom Secure Checkout</h3>
+      <button class="cart-close-btn" id="cart-close" aria-label="Close Cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-empty-state" id="cart-empty">
+      <i class="fa-solid fa-shield-virus"></i>
+      <p>No active training packages selected.</p>
+      <button class="btn-cta btn-shop-back" id="cart-continue-shopping">Explore Plans</button>
+    </div>
+
+    <!-- Active Cart Content -->
+    <div class="cart-active-content" id="cart-content" style="display: none;">
+      <div class="cart-item-card">
+        <div class="cart-item-details">
+          <h4 id="cart-item-title">Apex Guardian Plan</h4>
+          <p id="cart-item-sub">B2B Security Awareness Academy</p>
+          <span class="cart-item-base-price" id="cart-item-price">$499/mo</span>
+        </div>
+        <button class="cart-remove-item" id="cart-remove" aria-label="Remove Item"><i class="fa-solid fa-trash-can"></i></button>
+      </div>
+
+      <!-- Add-ons Configurator (E-commerce customizer) -->
+      <div class="cart-addons-section">
+        <h4>Deploy Optional Cyber Drills</h4>
+        <div class="addons-list">
+          
+          <label class="addon-card">
+            <input type="checkbox" class="addon-checkbox" data-addon-id="ransomware" data-addon-name="Simulated Ransomware Drill" data-addon-price="250">
+            <span class="addon-custom-check"></span>
+            <div class="addon-info">
+              <h5>Simulated Ransomware Drill <span class="addon-badge">DRILL</span></h5>
+              <p>Safe ransomware alert drill on 5 key developer boxes.</p>
+            </div>
+            <span class="addon-price">+$250</span>
+          </label>
+
+          <label class="addon-card">
+            <input type="checkbox" class="addon-checkbox" data-addon-id="soc2-kit" data-addon-name="SOC2 Compliance Audit Kit" data-addon-price="150">
+            <span class="addon-custom-check"></span>
+            <div class="addon-info">
+              <h5>SOC2 Auditor Pack</h5>
+              <p>Official SOC2 compliance registries export templates.</p>
+            </div>
+            <span class="addon-price">+$150</span>
+          </label>
+
+        </div>
+      </div>
+
+      <!-- Price Totals -->
+      <div class="cart-totals">
+        <div class="total-row">
+          <span>Base Plan (Monthly):</span>
+          <span id="base-total-val">$499</span>
+        </div>
+        <div class="total-row" id="addons-row" style="display: none;">
+          <span>Cyber Drills Flat:</span>
+          <span id="addons-total-val">+$0</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Grand Total:</span>
+          <span id="grand-total-val">$499</span>
+        </div>
+      </div>
+
+      <!-- Secure Multi-Step Checkout -->
+      <div class="checkout-steps-container">
+        <!-- Step Indicator -->
+        <div class="checkout-steps-indicator">
+          <span class="step-dot active" id="step-dot-1">1</span>
+          <div class="step-connector"></div>
+          <span class="step-dot" id="step-dot-2">2</span>
+        </div>
+        
+        <!-- Step 1: Corporate Info -->
+        <div class="checkout-step-panel active" id="checkout-step-1">
+          <button class="btn-checkout-next" id="checkout-next-btn">Proceed to Secure Payment</button>
+        </div>
+
+        <!-- Step 2: Payment Details (Simulated Card) -->
+        <div class="checkout-step-panel" id="checkout-step-2">
+          <div class="credit-card-form">
+            <div class="credit-card-mock">
+              <div class="card-chip"></div>
+              <div class="card-number" id="card-num-preview">•••• •••• •••• ••••</div>
+              <div class="card-meta">
+                <span class="card-holder" id="card-holder-preview">YOUR NAME</span>
+                <span class="card-expiry" id="card-expiry-preview">MM/YY</span>
+              </div>
+            </div>
+            <div class="card-inputs">
+              <input type="text" id="card-name" placeholder="Cardholder Name" required>
+              <input type="text" id="card-number" placeholder="Card Number" maxlength="19" required>
+              <div class="card-inputs-row">
+                <input type="text" id="card-exp" placeholder="MM/YY" maxlength="5" required>
+                <input type="text" id="card-cvc" placeholder="CVC" maxlength="3" required>
+              </div>
+            </div>
+          </div>
+          <button class="btn-checkout-complete" id="checkout-pay-btn">Authorize Seat Subscriptions <i class="fa-solid fa-lock"></i></button>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SUCCESS CONFIRMATION MODALS (Interactive Popups) -->
+  <div class="modal-overlay" id="success-modal-overlay"></div>
+  <div class="success-modal" id="success-modal">
+    <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <h3 id="success-title">Subscriptions Confirmed!</h3>
+    <p id="success-message">Welcome to CYPHER! Your flat-rate secure training portal is initialized. We have sent a corporate administrator login invitation directly to your business email.</p>
+    <button class="btn-modal-close" id="success-modal-close">Enter Admin Portal</button>
+  </div>
+
+  <!-- FLOATING CONVERSION CONCIERGE & WHATSAPP WIDGETS -->
+  <div class="floating-conversion-hub">
+    <!-- WhatsApp Floating Action -->
+    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" class="whatsapp-bubble" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    
+    <!-- Concierge Assistant Bubble -->
+    <button class="concierge-bubble" id="concierge-trigger" aria-label="Open Chat Concierge">
+      <i class="fa-solid fa-terminal"></i>
+      <span class="chat-ping"></span>
+    </button>
+  </div>
+
+  <!-- Concierge Chat Panel -->
+  <div class="concierge-chat-panel" id="concierge-panel">
+    <div class="concierge-header">
+      <div class="concierge-avatar">
+        <span>C</span>
+        <span class="status-indicator online"></span>
+      </div>
+      <div class="concierge-title">
+        <h4>CYPHER Advisor</h4>
+        <p>Online • Direct Support</p>
+      </div>
+      <button class="concierge-close" id="concierge-close" aria-label="Close Chat"><i class="fa-solid fa-chevron-down"></i></button>
+    </div>
+    
+    <!-- Chat History -->
+    <div class="concierge-body" id="concierge-chat-history">
+      <div class="chat-bubble agent">
+        <p>Hello! I'm your CYPHER cybersecurity concierge advisor. How can I help you secure your team or satisfy your upcoming SOC2 compliance audits today?</p>
+        <span class="chat-time">Just now</span>
+      </div>
+    </div>
+    
+    <!-- Pre-defined FAQ Objections triggers -->
+    <div class="concierge-faq-prompts">
+      <button class="faq-prompt-btn" data-question="compliance">Are certificates valid for audits?</button>
+      <button class="faq-prompt-btn" data-question="drills">How do phishing campaigns work?</button>
+      <button class="faq-prompt-btn" data-question="audit">Can we schedule a mock phishing audit?</button>
+    </div>
+
+    <!-- Chat Inputs -->
+    <div class="concierge-footer">
+      <input type="text" id="concierge-input" placeholder="Type a message..." aria-label="Concierge Message">
+      <button id="concierge-send" aria-label="Send Message"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <a href="#" class="logo-link">
+          <div class="logo-mark"><i class="fa-solid fa-shield-halved"></i></div>
+          <span class="logo-text">CYPHER</span>
+        </a>
+        <p class="footer-brand-tag">Interactive cybersecurity awareness training micro-lessons designed to meet compliance and prevent corporate phishing breaches.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-col links-col">
+        <h4>Academy Plans</h4>
+        <ul>
+          <li><a href="#pricing">Sentinel Starter Pack</a></li>
+          <li><a href="#pricing">Apex Guardian Plan</a></li>
+          <li><a href="#pricing">Enterprise Shield Pack</a></li>
+          <li><a href="#booking-section">Book Phishing Audit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col links-col">
+        <h4>Academy Lessons</h4>
+        <ul>
+          <li><a href="#sandbox-section">Phishing Simulator</a></li>
+          <li><a href="#sandbox-section">Password Architect</a></li>
+          <li><a href="#sandbox-section">Safe Browsing Quizzes</a></li>
+          <li><a href="#sandbox-section">Certificate Generator</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col links-col">
+        <h4>Discoverability</h4>
+        <ul>
+          <li><a href="https://google.com/business/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-location-dot"></i> Google Business Link</a></li>
+          <li><a href="#about">CISO Security Certifications</a></li>
+          <li><a href="#pricing">Seat Flat Rates</a></li>
+          <li><a href="#portfolio">Client Impact Metrics</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 CYPHER LLC. All rights reserved. SOC2 Ready Security Awareness Registry.</p>
+    </div>
+  </footer>
+
+  <!-- Confetti Canvas for Success Checkout/Certificate -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- App Logic File -->
+  <script src="app.js"></script>
+</body>
+</html>
